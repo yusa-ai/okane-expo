@@ -20,10 +20,7 @@ const GuestStack = () => {
 
 const UserTab = () => {
 	return (
-		<Tab.Navigator
-			screenOptions={{
-				headerShown: false,
-			}}>
+		<Tab.Navigator>
 			<Tab.Screen
 				name="Accueil"
 				component={Dashboard}
