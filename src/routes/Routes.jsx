@@ -11,10 +11,7 @@ const Tab = createBottomTabNavigator();
 
 const GuestStack = () => {
 	return (
-		<Stack.Navigator
-			screenOptions={{
-				headerShown: false,
-			}}>
+		<Stack.Navigator>
 			<Stack.Screen name="Splash" component={Splash} />
 			<Stack.Screen name="Connexion" component={Connexion} />
 		</Stack.Navigator>
