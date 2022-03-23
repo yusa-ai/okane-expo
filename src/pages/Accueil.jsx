@@ -5,7 +5,7 @@ import { collection, limit, orderBy, query } from "firebase/firestore";
 import { StatusBar } from "expo-status-bar";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
-const Dashboard = ({ navigation }) => {
+const Accueil = ({ navigation }) => {
 	const user = auth.currentUser;
 
 	const [depenses, loading, error] = useCollectionData(
@@ -46,7 +46,7 @@ const Dashboard = ({ navigation }) => {
 	);
 };
 
-export default Dashboard;
+export default Accueil;
 
 const styles = StyleSheet.create({
 	container: {
