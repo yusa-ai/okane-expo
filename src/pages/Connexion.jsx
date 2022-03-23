@@ -1,13 +1,24 @@
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, TextInput, View } from "react-native";
 
+import { CommonActions } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
+import { auth } from "../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 
 const Connexion = ({ navigation }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	const login = async (email, password) => {};
+	const login = async (email, password) => {
+		await signInWithEmailAndPassword(auth, email, password);
+		navigation.dispatch(
+			CommonActions.reset({
+				index: 0,
+				routes: [{ name: "UserTab" }],
+			})
+		);
+	};
 
 	return (
 		<View style={styles.container}>
